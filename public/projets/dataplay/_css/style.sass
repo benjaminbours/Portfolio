@@ -1,0 +1,206 @@
+@import "reset.css"
+@import "bourbon"
+@import "animate.css"
+
+$modular-scale-ratio: 1.414
+$modular-scale-base: em(20)
+$column: 7.1875% !default
+$gutter: 1.25% !default
+$max-width: 75% !default
+
+@import "neat"
+
+// .center
+//   text-align: center
+//   margin: 3em 0
+
+a
+  display: block
+  width: 150px
+  margin: 0 auto
+  margin-bottom: 100px
+  bottom: 30px
+  left: 15%
+  color: white
+  font-size: em(20)
+  border: solid rgba(255, 255, 255, 0) 1px
+  transition: 0.4s
+  padding: 1em
+  z-index: 100
+
+  &:hover
+    border: solid rgba(255, 255, 255, 1) 1px
+    transition: 0.4s
+    padding: 1em
+
+
+.mention
+  color: white
+  margin: 50px 0
+  text-align: center
+
+.mention__globe
+  color: white
+  width: 55%
+  text-align: center
+  margin-top: 100px
+
+body
+  background: #000
+  font-family: "industry"
+
+.container
+  width: 960px
+  margin: 0 auto
+  overflow: hidden
+  margin-top: 3em
+
+.globe
+  height: 450px
+  width: 450px
+  float: left
+  margin: 3em
+
+.geo-globe
+  fill : black
+  // black
+
+svg
+  fill : #1E1E1E
+  stroke : #04B2D9
+  stroke-width: .1em
+
+.geo-node
+  stroke: rgba(4, 178, 217, 0.66)
+  fill: rgba(209, 25, 30, 0.66)
+  cursor: pointer
+
+  &:hover
+    fill: rgba(209, 25, 30, 1)
+
+.geo-node-click
+  fill: blue
+
+.countryTooltip
+  position: absolute
+  display: none
+  pointer-events: none
+  background: #fff
+  padding: 1em
+  text-align: left
+  color: #666
+  font-size: 14px
+
+  h2
+    color: black
+
+  p
+    margin: 0.5em 0
+    color: black
+
+  p:last-child
+    font-weight: 500
+
+.container__select
+  overflow: hidden
+  width: 300px
+  float: right
+  height: 550px
+
+  #select-country
+    color: #FFF
+    height: 550px
+    overflow: auto
+    padding: 1em
+    // border: solid #d1191e 5px
+
+    &::-webkit-scrollbar
+      background: white
+      width: 5px
+
+    &::-webkit-scrollbar-thumb
+      background: #d1191e
+
+    li
+      margin: 2em 0
+      border: solid white 1px
+      transition: 0.3s ease-in-out
+
+      &:hover
+        background: #d1191e
+        transition: 0.3s ease-in-out
+
+    li:first-child
+      margin-top: 0
+
+    li:last-child
+      margin-bottom: 0
+
+    .divShow
+      border-bottom: solid rgba(255, 255, 255, 0) 1px
+      padding: 1em
+      transition: 0.5s
+      cursor: pointer
+
+    .divHide
+      height: 0
+      overflow: hidden
+      transition: 0.5s
+      padding: 1em
+      padding-top: 0
+      padding-bottom: 0
+
+      .pilote
+        height: 40px
+        float: left
+        width: 100%
+        p
+          float: left
+          line-height: 40px
+          margin-right: 15px
+          text-align: center
+
+        .name
+          box-sizing: border-box
+          margin-right: 0
+
+        .position
+          font-weight: 900
+          font-size: 24px
+
+        .points
+          margin-right: 0
+          float: right
+          font-weight: 700
+
+    .accordion-item-expanded
+      background: #d1191e
+
+      .divShow
+        border-bottom: solid rgba(255, 255, 255, 1) 1px
+        transition: 0.5s
+      .divHide
+        height: 0
+        overflow: hidden
+        transition: 0.5s
+        margin-bottom: 10px
+
+h1, h2, h3
+  font-family: "industry"
+  font-size: em(44)
+  font-weight: 900
+  line-height: 1.4
+  color: white
+  // text-transform: uppercase
+
+h2
+  font-size: em(24)
+  font-weight: 500
+  font-style: italic
+
+h3
+  font-size: em(32)
+  color: white
+  float: right
+  margin-right: 56px
+  margin-bottom: 20px

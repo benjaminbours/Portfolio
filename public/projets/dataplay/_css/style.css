@@ -1,0 +1,174 @@
+@import url(reset.css);
+@import url(animate.css);
+html {
+  box-sizing: border-box; }
+
+*, *::after, *::before {
+  box-sizing: inherit; }
+
+a {
+  display: block;
+  width: 150px;
+  margin: 0 auto;
+  margin-bottom: 100px;
+  bottom: 30px;
+  left: 15%;
+  color: white;
+  font-size: 1.25em;
+  border: solid rgba(255, 255, 255, 0) 1px;
+  transition: 0.4s;
+  padding: 1em;
+  z-index: 100; }
+  a:hover {
+    border: solid white 1px;
+    transition: 0.4s;
+    padding: 1em; }
+
+.mention {
+  color: white;
+  margin: 50px 0;
+  text-align: center; }
+
+.mention__globe {
+  color: white;
+  width: 55%;
+  text-align: center;
+  margin-top: 100px; }
+
+body {
+  background: #000;
+  font-family: "industry"; }
+
+.container {
+  width: 960px;
+  margin: 0 auto;
+  overflow: hidden;
+  margin-top: 3em; }
+
+.globe {
+  height: 450px;
+  width: 450px;
+  float: left;
+  margin: 3em; }
+
+.geo-globe {
+  fill: black; }
+
+svg {
+  fill: #1E1E1E;
+  stroke: #04B2D9;
+  stroke-width: .1em; }
+
+.geo-node {
+  stroke: rgba(4, 178, 217, 0.66);
+  fill: rgba(209, 25, 30, 0.66);
+  cursor: pointer; }
+  .geo-node:hover {
+    fill: #d1191e; }
+
+.geo-node-click {
+  fill: blue; }
+
+.countryTooltip {
+  position: absolute;
+  display: none;
+  pointer-events: none;
+  background: #fff;
+  padding: 1em;
+  text-align: left;
+  color: #666;
+  font-size: 14px; }
+  .countryTooltip h2 {
+    color: black; }
+  .countryTooltip p {
+    margin: 0.5em 0;
+    color: black; }
+  .countryTooltip p:last-child {
+    font-weight: 500; }
+
+.container__select {
+  overflow: hidden;
+  width: 300px;
+  float: right;
+  height: 550px; }
+  .container__select #select-country {
+    color: #FFF;
+    height: 550px;
+    overflow: auto;
+    padding: 1em; }
+    .container__select #select-country::-webkit-scrollbar {
+      background: white;
+      width: 5px; }
+    .container__select #select-country::-webkit-scrollbar-thumb {
+      background: #d1191e; }
+    .container__select #select-country li {
+      margin: 2em 0;
+      border: solid white 1px;
+      transition: 0.3s ease-in-out; }
+      .container__select #select-country li:hover {
+        background: #d1191e;
+        transition: 0.3s ease-in-out; }
+    .container__select #select-country li:first-child {
+      margin-top: 0; }
+    .container__select #select-country li:last-child {
+      margin-bottom: 0; }
+    .container__select #select-country .divShow {
+      border-bottom: solid rgba(255, 255, 255, 0) 1px;
+      padding: 1em;
+      transition: 0.5s;
+      cursor: pointer; }
+    .container__select #select-country .divHide {
+      height: 0;
+      overflow: hidden;
+      transition: 0.5s;
+      padding: 1em;
+      padding-top: 0;
+      padding-bottom: 0; }
+      .container__select #select-country .divHide .pilote {
+        height: 40px;
+        float: left;
+        width: 100%; }
+        .container__select #select-country .divHide .pilote p {
+          float: left;
+          line-height: 40px;
+          margin-right: 15px;
+          text-align: center; }
+        .container__select #select-country .divHide .pilote .name {
+          box-sizing: border-box;
+          margin-right: 0; }
+        .container__select #select-country .divHide .pilote .position {
+          font-weight: 900;
+          font-size: 24px; }
+        .container__select #select-country .divHide .pilote .points {
+          margin-right: 0;
+          float: right;
+          font-weight: 700; }
+    .container__select #select-country .accordion-item-expanded {
+      background: #d1191e; }
+      .container__select #select-country .accordion-item-expanded .divShow {
+        border-bottom: solid white 1px;
+        transition: 0.5s; }
+      .container__select #select-country .accordion-item-expanded .divHide {
+        height: 0;
+        overflow: hidden;
+        transition: 0.5s;
+        margin-bottom: 10px; }
+
+h1, h2, h3 {
+  font-family: "industry";
+  font-size: 2.75em;
+  font-weight: 900;
+  line-height: 1.4;
+  color: white; }
+
+h2 {
+  font-size: 1.5em;
+  font-weight: 500;
+  font-style: italic; }
+
+h3 {
+  font-size: 2em;
+  color: white;
+  float: right;
+  margin-right: 56px;
+  margin-bottom: 20px; }

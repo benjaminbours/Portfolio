@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Yumi</title>
+
+  <!-- browser meta description -->
+  <meta name="description" content=""/>
+
+  <!-- meta Facebook opengraph -->
+  <meta propery="og:title" content="">
+  <meta propery="og:description" content="">
+  <meta propery="og:url" content="">
+  <meta propery="og:img" content="">
+  <meta propery="og:type" content="">
+
+  <!-- meta Twitter card -->
+  <meta name="twitter:title" content="">
+  <meta name="twitter:description" content="">
+  <meta name="twitter:url" content="">
+  <meta name="twitter:img" content="">
+  <meta name="twitter:type" content="">
+
+  <!-- Favicon here! -->
+  <!-- ... -->
+
+  <!-- viewport -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <!-- CSS link -->
+  <link href="css/styles.css" rel="stylesheet" />
+
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header>
+<div class="container">
+
+   <div class="content__text">
+      <h1>Yumi</h1>
+      <p class="p__plus">a new <br>simple way <br>to communicate</p>
+   </div>
+
+   <div class="content__sphere">
+      <img src="assets/images/sphere.png" alt="shape 3D" id="sphere--image">
+   </div>
+
+   <a class="calltoaction" href="#project">Support our project</a>
+
+</div>
+</header>
+
+<!-- MAIN -->
+<main>
+
+<!-- SECTION YUMI, WHAT IS IT ? -->
+<section class="what">
+<div class="container">
+
+   <h2>Yumi, what is it?</h2>
+   <p>Yumi est un nouveau concept de communication jumelée qui, grâce à une projection holographique vous permet de donner forme à un écrit ou une parole. En utilisant vos mains pour modéliser une forme ou simplement dessiner à main libre, vous pouvez laisser votre imagination vous guider pour interpréter un message à votre interlocuteur. Les deux objets sont connectés ensemble et cela permet donc d’interagir à deux.</p>
+
+</div>
+<span class="yumi3d">rendu objet 3D yumi</span>
+</section>
+
+<!-- SECTION IMAGINATION IN CONTROL -->
+<section class="imagination">
+<div class="container">
+
+   <h2>Imagination in control</h2>
+   <p>Vous êtes un artiste dans l’âme? Commencez donc votre message par une ébauche à main levé directement dans l’interface de l’hologramme.</p>
+
+</div>
+<span class="torus torus__1">torus1</span>
+<span class="torus torus__2">torus2</span>
+<span class="torus torus__3">torus3</span>
+</section>
+
+<!-- SECTION SIMPLE TO USE -->
+<section class="use">
+<span class="drap__bg">background drap</span>
+<div class="container">
+
+   <h2>Simple to use</h2>
+   <p>Grâce à la bibliothèque de formes de base, vous pouvez  faire apparaître une forme géométrique spécifique. Pour cela, il vous suffit de représenter la forme avec vos mains, par exemple en faisant un rond avec vos mains, une sphère apparaît et vous permet donc de la déformer/moduler à votre guise pour créer votre message.</p>
+
+</div>
+</section>
+
+<!-- SECTION TWIN AND SMART OBJECT -->
+<section class="object">
+<div class="container">
+
+   <span class="bg__purple">background purple</span>
+   <h2>Twin and smart object</h2>
+   <p>L’objet connecté est jumelée à sa partenaire ce qui permet d’interagir en temps réel avec votre interlocuteur, de modifier ensemble la forme ou  simplement laisser une modification en cours a plus tard.</p>
+
+</div>
+<span class="cube cube__1">cube1</span>
+<span class="cube cube__2">cube2</span>
+<span class="cube cube__3">cube3</span>
+</section>
+
+<!-- SECTION LET'S SEE YUMI -->
+<section class="video">
+<div class="container">
+
+   <h2>Let's see Yumi</h2>
+   <div id="video_player_box">
+     <video id="my_video" preload>
+        <source src="assets/video/horse.mp4" type="video/mp4">
+        <source src="assets/video/horse.mov" type="video/mov">
+     </video>
+     <div id="video_controls_bar">
+       <div class="wrap__controls">
+          <button id="playpausebtn">Button play</button>
+          <input id="volumeslider" type="range" min="0" max="100" value="80" step="1">
+          <input id="seekslider" type="range" min="0" max="100" value="0" step="1">
+          <div class="spantime">
+             <span id="curtimetext">00:00</span> / <span id="durtimetext">00:00</span>
+          </div>
+          <button id="fullscreenbtn">&nbsp;</button>
+       </div>
+     </div>
+   </div>
+
+</div>
+</section>
+
+<!-- SECTION SUPPORT OUR PROJECT -->
+<section id="project" class="project">
+<div class="container">
+
+   <h2>Suppport our project</h2>
+   <div class="wrap__label">
+      <div class="content__label">
+         <p><span id="lc">0</span>LC</p>
+         <p class="label">Sur 100.000 LC</p>
+      </div>
+
+      <div class="content__label">
+         <p><span id="contributor">0</span></p>
+         <p class="label">Contributeurs</p>
+      </div>
+
+      <div class="content__label">
+         <p><span id="day">60</span></p>
+         <p class="label">Jours restants</p>
+      </div>
+   </div>
+
+   <button class="calltoaction" title="support yumi">I support this project</button>
+
+
+</div>
+</section>
+</main>
+
+<!-- FOOTER -->
+<footer>
+<div class="container">
+
+<small>©2017 made by UnCoErrance</small>
+
+</div>
+</footer>
+
+<script type="text/javascript" src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+
+<script type="x-shader/x-vertex" id="tessellateVertexshader">
+
+    uniform float amplitude;
+    uniform float rotate;
+    uniform float time;
+    uniform float opacity;
+
+    attribute vec3 translateDirection;
+    attribute vec3 origin;
+    attribute float angle;
+    attribute float delay;
+    attribute vec3 axisRotation;
+
+    varying vec3 vNormal;
+    varying vec2 myUv;
+    vec3 vPosition;
+
+    mat4 rotationMatrix(vec3 axis, float angle)
+    {
+        axis = normalize(axis);
+        float s = sin(angle);
+        float c = cos(angle);
+        float oc = 1.0 - c;
+
+        return mat4(oc * axis.x * axis.x + c,           oc * axis.x * axis.y - axis.z * s,  oc * axis.z * axis.x + axis.y * s,  0.0,
+                    oc * axis.x * axis.y + axis.z * s,  oc * axis.y * axis.y + c,           oc * axis.y * axis.z - axis.x * s,  0.0,
+                    oc * axis.z * axis.x - axis.y * s,  oc * axis.y * axis.z + axis.x * s,  oc * axis.z * axis.z + c,           0.0,
+                    0.0,                                0.0,                                0.0,                                1.0);
+    }
+
+    void main() {
+
+        float updateTime;
+
+        if ( time <= delay) {
+            updateTime = 0.0;
+        } else {
+            // updateTime = (time-delay)*(10.0-time);
+            updateTime = (time-delay);
+        }
+
+        vec3 newPosition;
+        vec3 newOrigin;
+
+        vPosition = position;
+        // this is the setup of the rotation matrix
+        float powerRotation = 1.0;
+        float angleRotation = angle * powerRotation * updateTime;
+        mat4 rotation = rotationMatrix(axisRotation, angleRotation);
+
+        vNormal = normal;
+        myUv = uv;
+
+        // this position the texture in the good direction
+        float uvX = (myUv.x * -1.0) + 1.0;
+        float uvY = myUv.y;
+        myUv = vec2(uvX, uvY);
+
+        // TODO: Terminer le parametrage de la force de translation
+        // float powerTranslation = 5.0;
+        // powerTranslation -= time;
+        //
+        // if (powerTranslation <= 0.0) {
+        //
+        //     powerTranslation = 0.0;
+        //     powerTranslation += time - 5.0;
+        //
+        // }
+
+        // quand
+
+        // this is the application of the translation to vertex position
+        newPosition = vPosition + updateTime  * translateDirection;
+        newOrigin = origin + updateTime  * translateDirection;
+
+        // this is the application of the rotation matrix setup before
+        // we need to substract from vertex position, the distance from origin of each face.
+        // then multiplie by the rotation
+        // and finaly add back the distance from origin to the result
+        vec4 lastPosition = (vec4(newPosition, 1.0) - vec4(newOrigin, 1.0)) * rotation;
+        lastPosition = lastPosition + vec4(newOrigin, 1.0);
+
+        gl_Position = projectionMatrix * modelViewMatrix * lastPosition;
+
+    }
+
+</script>
+
+<script type="x-shader/x-fragment" id="tessellateFragmentshader">
+
+    varying vec3 vNormal;
+    uniform sampler2D texture;
+    varying vec2 myUv;
+    uniform float opacity;
+
+    void main() {
+
+        vec3 light = vec3( 1.0,0.5,0.0 );
+        light = normalize( light );
+
+        float directional = max( dot( vNormal, light ), 1.0 );
+        gl_FragColor = texture2D (texture, myUv);
+        gl_FragColor.a = opacity;
+        // gl_FragColor = vec4(1.0,1.0,1.0,opacity);
+
+    }
+
+</script>
+
+<script type="text/javascript" src="js/scripts.js"></script>
+</body>
+</html>
