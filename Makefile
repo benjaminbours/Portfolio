@@ -18,10 +18,10 @@ install-dev-front: init-npm install-dev-js install-dev-bundler
 #-----------------------------------------------------------------------
 
 deploy:
-	rsync -avhpz --exclude-from=.syncignore ./ pi@192.168.1.4:Public/portfolio/
+	rsync -avhpz --exclude-from=.syncignore ./public/ pi@192.168.1.4:www/portfolio
 
 deploy-test:
-	rsync -avhpzn --exclude-from=.syncignore ./ pi@192.168.1.4:Public/portfolio/
+	rsync -avhpzn --exclude-from=.syncignore ./public/ pi@192.168.1.4:www/portfolio
 
 # backup-live:
 # 	rsync -avhpz trainthetrainerbe.insideapp.be:www/ ./backup

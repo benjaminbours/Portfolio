@@ -2,3 +2,7 @@ dist
 node_modules
 *.bundle.js
 *.bundle.js.map
+.env
+.DS_Store
+db_backup
+backup.sql
