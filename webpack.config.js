@@ -2,7 +2,7 @@ const path = require("path");
 // const BundleAnalyzerPlugin = require("webpack-bundle-analyzer").BundleAnalyzerPlugin;
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
-const ouputPath = path.resolve(__dirname, "./dist/");
+const ouputPath = path.resolve(__dirname, "./public/");
 
 module.exports = {
     context: path.resolve(__dirname, "./src"),

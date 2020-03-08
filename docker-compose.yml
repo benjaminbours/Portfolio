@@ -1,0 +1,33 @@
+version: "3"
+services:
+  mysql:
+    image: mysql:5.7
+    environment:
+      MYSQL_DATABASE: "directus"
+      MYSQL_USER: "${DB_USER}"
+      MYSQL_PASSWORD: "${DB_PASSWORD}"
+      MYSQL_ROOT_PASSWORD: "${DB_PASSWORD}"
+    ports:
+      - "3306:3306"
+    volumes:
+      - ./db_backup:/var/lib/mysql
+
+  directus:
+    image: directus/directus:v8-apache
+    ports:
+      - "8080:80"
+    environment:
+      # DIRECTUS_USE_ENV: 0
+      DIRECTUS_APP_ENV: "production"
+      DIRECTUS_AUTH_PUBLICKEY: "${DIRECTUS_PUBLICKEY}"
+      DIRECTUS_AUTH_SECRETKEY: "${DIRECTUS_SECRETKEY}"
+      DIRECTUS_DATABASE_HOST: "mysql"
+      DIRECTUS_DATABASE_PORT: "3306"
+      DIRECTUS_DATABASE_NAME: "directus"
+      DIRECTUS_DATABASE_USERNAME: "${DB_USER}"
+      DIRECTUS_DATABASE_PASSWORD: "${DB_PASSWORD}"
+    volumes:
+      - ./data/config:/var/directus/config
+      - ./data/uploads:/var/directus/public/uploads
+    links:
+      - mysql:mysql
