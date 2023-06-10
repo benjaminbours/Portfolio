@@ -28,7 +28,7 @@
   "dependencies": {
     "@directus/gatsby-source-directus": "^0.2.4",
     "dotenv": "^8.2.0",
-    "gatsby": "^2.19.32",
+    "gatsby": "^4.25.7",
     "gatsby-plugin-sass": "^2.1.30",
     "gatsby-plugin-typescript": "^2.2.2",
     "node-sass": "^4.13.1",
